@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    overflow-x: hidden;
+    }
+    
+    @media only screen
+    and (min-width: 800px) {
+    body {
+    overflow: hidden;
+    }
+    
+    .form-wrapper {
+    height: 200vh;
+    overflow: auto;
+    }
+    
+    .list-wrapper {
+        height: 100vh;
+        overflow: auto;
+    }
+    }

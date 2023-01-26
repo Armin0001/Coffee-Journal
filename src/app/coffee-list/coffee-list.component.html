@@ -1,0 +1,79 @@
+
+<table class="table">
+    <thead class="table-head">
+    <tr>
+    <th scope="col"></th>
+    <th scope="col">Price</th>
+    <th scope="col">Location</th>
+    <th scope="col" class="record-shots">Shots</th>
+    <th scope="col" class="record-score">Score</th>
+    <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let record of records; let i = index">
+    <tr>
+    <td class ="record-cell table-cell">
+    <div class="record-date">{{record.dateCreated | date }} </div>
+    <div class="record-type">{{record.type}} </div>
+    <div class="record-type">{{record.bean}} </div>
+    </td>
+    <td class="vertical-middle record-price table-cell">{{ record.price | currency }}</td>
+    <td class="vertical-middle record-location table-cell">{{ record.location }}</td>
+    <td class="vertical-middle record-shots table-cell">{{ record.noOfShots }}</td>
+    <td class="vertical-middle record-score table-cell">{{ record.score }}</td>
+    <td class="vertical-middle record-price table-cell">
+    <button class="btn btn-danger form-button" (click)="openConfirmationPopup(record.id)" >
+    <i class="bi bi-trash"></i>
+    </button>
+    <button class="btn btn-primary" (click)="onUpdate(record.id)"> 
+    <i class="bi bi-pen"></i>
+    </button>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayConfirmationPopup}">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content model-bg">
+        <div class="modal-body">
+        <div class="row justify-content-center main-wrapper">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+        
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 modal-message">
+        <h4 class="delete-result-modal">Are you sure?</h4>
+        <button type="button" class="btn btn-primary button-delete" (click)="onDelete()">
+        Delete
+        </button>
+ 		<button type="button" class="btn btn-primary button-cancel" (click)="closeConfirmationPopup()">
+        Cancel
+        </button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayResultPopup}">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content model-bg">
+            <div class="modal-body">
+            <div class="row justify-content-center main-wrapper">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 modal-message">
+            <h4 class="delete-result-modal">{{resultPopupMessage}}</h4>
+            <button type="button" class="btn btn-primary button-cancel" (click)="closeResultPopup()">
+            Cancel
+            </button>
+             
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    
