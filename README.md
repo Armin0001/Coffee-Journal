@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
+## Reference
+I would just like to note that the reference for this project is this link right here: https://www.youtube.com/watch?v=4flucmRFShc&list=PL4G0MUH8YWiAKSBgu1wIJqCzGKEAglsJ8
+
+The functionalities of this project are creating, reading, updating and deleting data. So, the project uses dotnet for the backend and angular for the frontend. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
